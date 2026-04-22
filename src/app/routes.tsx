@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Outlet, ScrollRestoration } from "react-router";
 import { HomePage } from "./components/HomePage";
 import { NotFound } from "./components/NotFound";
 import { DomainsListingPage, DomainDetailPage } from "./components/DomainsPage";
@@ -12,61 +12,75 @@ import { ContactPage } from "./components/ContactPage";
 import { JoinUsPage } from "./components/JoinUsPage";
 import { AdminPage } from "./components/admin/AdminPage";
 
+function RootLayout() {
+  return (
+    <>
+      <ScrollRestoration />
+      <Outlet />
+    </>
+  );
+}
+
 export const router = createBrowserRouter([
   {
-    path: "/",
-    Component: HomePage,
-  },
-  {
-    path: "/about",
-    Component: AboutPage,
-  },
-  {
-    path: "/pillars",
-    Component: PillarsPage,
-  },
-  {
-    path: "/achievements",
-    Component: AchievementsPage,
-  },
-  {
-    path: "/team",
-    Component: TeamPage,
-  },
-  {
-    path: "/contact",
-    Component: ContactPage,
-  },
-  {
-    path: "/join",
-    Component: JoinUsPage,
-  },
-  {
-    path: "/domains",
-    Component: DomainsListingPage,
-  },
-  {
-    path: "/domains/:slug",
-    Component: DomainDetailPage,
-  },
-  {
-    path: "/events",
-    Component: EventsListingPage,
-  },
-  {
-    path: "/events/:slug",
-    Component: EventDetailPage,
-  },
-  {
-    path: "/gallery",
-    Component: GalleryPage,
-  },
-  {
-    path: "/admin/*",
-    Component: AdminPage,
-  },
-  {
-    path: "*",
-    Component: NotFound,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        Component: HomePage,
+      },
+      {
+        path: "/about",
+        Component: AboutPage,
+      },
+      {
+        path: "/pillars",
+        Component: PillarsPage,
+      },
+      {
+        path: "/achievements",
+        Component: AchievementsPage,
+      },
+      {
+        path: "/team",
+        Component: TeamPage,
+      },
+      {
+        path: "/contact",
+        Component: ContactPage,
+      },
+      {
+        path: "/join",
+        Component: JoinUsPage,
+      },
+      {
+        path: "/domains",
+        Component: DomainsListingPage,
+      },
+      {
+        path: "/domains/:slug",
+        Component: DomainDetailPage,
+      },
+      {
+        path: "/events",
+        Component: EventsListingPage,
+      },
+      {
+        path: "/events/:slug",
+        Component: EventDetailPage,
+      },
+      {
+        path: "/gallery",
+        Component: GalleryPage,
+      },
+      {
+        path: "/admin/*",
+        Component: AdminPage,
+      },
+      {
+        path: "*",
+        Component: NotFound,
+      },
+    ],
   },
 ]);
