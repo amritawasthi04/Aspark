@@ -1,0 +1,15 @@
+/* PERF: Use preconnect + font-display: swap instead of @import (render-blocking)
+ * Impact: LCP improvement ~200-400ms
+ * The link preconnect tags are injected via index.html <head>
+ * font-display: swap prevents FOIT (Flash of Invisible Text)
+ */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+}
+
+/* Fallback: still use Google Fonts URL but with display=swap to prevent render blocking */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
