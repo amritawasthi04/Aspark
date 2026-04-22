@@ -49,7 +49,7 @@ export function HeroSection() {
     <section
       id="home"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen pt-20 flex flex-col items-center justify-center overflow-hidden"
       style={{ background: "#050505" }}
     >
       {/* Animated gradient mesh BG */}

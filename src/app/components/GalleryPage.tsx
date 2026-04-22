@@ -187,7 +187,7 @@ export function GalleryPage() {
       <Navbar />
 
       {/* Cinematic Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden">
         {/* Background ambient glow */}
         <motion.div 
           className="absolute w-[800px] h-[800px] rounded-full opacity-20"

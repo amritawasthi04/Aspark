@@ -127,7 +127,7 @@ export function TeamPage() {
       <Navbar />
 
       {/* Cinematic Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden">
         <motion.div 
           className="absolute inset-0 z-0"
           style={{ y: heroY, opacity: heroOpacity }}
