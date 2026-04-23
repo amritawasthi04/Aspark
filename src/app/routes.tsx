@@ -1,4 +1,6 @@
 import { createBrowserRouter, Outlet, ScrollRestoration } from "react-router";
+import { SkipToContent } from "./components/A11yProvider";
+import { SEOHead } from "./components/SEOHead";
 import { HomePage } from "./components/HomePage";
 import { NotFound } from "./components/NotFound";
 import { DomainsListingPage, DomainDetailPage } from "./components/DomainsPage";
@@ -15,8 +17,12 @@ import { AdminPage } from "./components/admin/AdminPage";
 function RootLayout() {
   return (
     <>
+      <SEOHead title="ASPARK SOCIETY — Igniting Innovation" description="Innovation & Technology Society. Empowering the next generation of tech leaders." />
+      <SkipToContent />
       <ScrollRestoration />
-      <Outlet />
+      <div id="main-content">
+        <Outlet />
+      </div>
     </>
   );
 }
