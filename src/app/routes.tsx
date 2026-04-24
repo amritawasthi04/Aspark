@@ -13,6 +13,7 @@ import { TeamPage } from "./components/TeamPage";
 import { ContactPage } from "./components/ContactPage";
 import { JoinUsPage } from "./components/JoinUsPage";
 import { AdminPage } from "./components/admin/AdminPage";
+import { GlobalErrorBoundary } from "./components/ErrorBoundary";
 
 function RootLayout() {
   return (
@@ -30,6 +31,7 @@ function RootLayout() {
 export const router = createBrowserRouter([
   {
     element: <RootLayout />,
+    errorElement: <GlobalErrorBoundary />,
     children: [
       {
         path: "/",
