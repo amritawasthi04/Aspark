@@ -128,13 +128,30 @@ export function Footer() {
 
         {/* Footer Bottom */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#EAFBFF]/20 order-2 md:order-1 text-center md:text-left" style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 12 }}>
+          <p className="text-[#EAFBFF]/20 order-3 md:order-1 text-center md:text-left" style={{ fontFamily: "Rajdhani, sans-serif", fontSize: 12 }}>
             &copy; 2026 ASPARK — Innovation & Technology Society. All rights reserved.
           </p>
           
-          <motion.button
-            onClick={() => navigate("/admin")}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer order-1 md:order-2"
+          <div className="flex flex-col md:flex-row items-center gap-6 order-1 md:order-2">
+            {/* Kalesh Logos */}
+            <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity" title="Kalesh">
+              <img 
+                src="/kalesh-logo.png" 
+                alt="Kalesh Logo" 
+                className="h-8 w-8 object-contain rounded-md drop-shadow-[0_0_8px_rgba(255,50,0,0.4)]"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+              <img 
+                src="/kalesh-text.png" 
+                alt="Kalesh Text" 
+                className="h-6 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,100,0,0.4)]"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+
+            <motion.button
+              onClick={() => navigate("/admin")}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer"
             style={{
               background: "rgba(255,255,255,0.03)",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -152,6 +169,7 @@ export function Footer() {
             <ShieldCheck size={14} />
             ADMIN PANEL
           </motion.button>
+          </div>
         </div>
       </div>
     </footer>
