@@ -12,7 +12,7 @@ export function Footer() {
       style={{ background: "#050505", borderTop: "1px solid rgba(0, 229, 255, 0.08)" }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="flex flex-col">
             <div className="flex items-center gap-4 mb-6">
@@ -124,6 +124,27 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Powered by Kalesh */}
+          <div className="flex flex-col md:items-end">
+            <h4 className="mb-4 text-[#EAFBFF]/60 tracking-[0.15em] text-left md:text-right" style={{ fontFamily: "Orbitron, sans-serif", fontSize: 11 }}>
+              POWERED BY
+            </h4>
+            <div className="flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity" title="Kalesh">
+              <img 
+                src="/kalesh-logo.png" 
+                alt="Kalesh Logo" 
+                className="h-14 w-14 object-contain rounded-md drop-shadow-[0_0_12px_rgba(255,50,0,0.5)]"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+              <img 
+                src="/kalesh-text.png" 
+                alt="Kalesh Text" 
+                className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,100,0,0.5)]"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Footer Bottom */}
@@ -133,22 +154,6 @@ export function Footer() {
           </p>
           
           <div className="flex flex-col md:flex-row items-center gap-6 order-1 md:order-2">
-            {/* Kalesh Logos */}
-            <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity" title="Kalesh">
-              <img 
-                src="/kalesh-logo.png" 
-                alt="Kalesh Logo" 
-                className="h-8 w-8 object-contain rounded-md drop-shadow-[0_0_8px_rgba(255,50,0,0.4)]"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              />
-              <img 
-                src="/kalesh-text.png" 
-                alt="Kalesh Text" 
-                className="h-6 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,100,0,0.4)]"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              />
-            </div>
-
             <motion.button
               onClick={() => navigate("/admin")}
               className="flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer"
